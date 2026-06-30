@@ -1,0 +1,11 @@
+# Dane runtime / wyjście (nie trzymamy w repo)
+data/
+Raporty/
+_proposed.json
+*.log
+
+# OS / edytory
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc

@@ -1,0 +1,23 @@
+{
+  "skill_name": "skill-scout",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Odpal skill-scout na moich logach z ostatnich 7 dni — chcę zobaczyć co warto opakować w skill.",
+      "expected_output": "Raport HTML w Zasoby/skill-scout/Raporty/ z kandydatami ≥3× posortowanymi po priorytecie (freq × czas), plik stanu _proposed.json zaktualizowany, krótkie podsumowanie w czacie.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Zrób przegląd powtarzalnej ręcznej roboty z ostatnich 21 dni.",
+      "expected_output": "Parser z oknem 21 dni, kandydaci ≥3×, maks 7 w raporcie, dowody (cytaty z dat), HTML AIBIZ Dark Impact.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Co zautomatyzować? Które ręczne czynności zżerają mi najwięcej czasu w tym tygodniu?",
+      "expected_output": "Wykrycie skilla skill-scout, raport z priorytetem = częstotliwość × zaoszczędzony czas, wyciszenie już zaproponowanych z _proposed.json.",
+      "files": []
+    }
+  ]
+}
