@@ -37,7 +37,7 @@ Frazy wyzwalające: „skill scout", „co warto opakować w skill", „przeglą
 
 - **Claude Code** z logami sesji w `~/.claude/projects/`
 - **Python 3** (parser) i **Node.js** (generator raportu HTML)
-- Ścieżki wyjściowe (`Zasoby/skill-scout/`) są dopasowane pod vault Obsidian — dostosuj pod swój setup, jeśli używasz innej struktury.
+- Ścieżki wyjściowe (`Zasoby/raporty/skill-scout/`) są dopasowane pod vault Obsidian — dostosuj pod swój setup, jeśli używasz innej struktury.
 
 ## Pliki
 

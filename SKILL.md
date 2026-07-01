@@ -18,7 +18,7 @@ który oszczędza czas. Robisz je z rozpędu i sam ich nie wyłapujesz — scout
 w tygodniu i podaje gotową listę „to warto opakować", posortowaną po zwrocie.
 
 **Zasada nadrzędna:** scout **niczego nie buduje i nie zmienia** — tylko czyta logi i pisze raport
-+ plik stanu w `Zasoby/skill-scout/`. Decyzję, co faktycznie opakować, podejmujesz Ty.
++ plik stanu w `Zasoby/raporty/skill-scout/`. Decyzję, co faktycznie opakować, podejmujesz Ty.
 
 ---
 
@@ -48,7 +48,7 @@ Trzy rzeczy, równolegle:
      echo "$name — $desc"
    done
    ```
-3. **Plik stanu** — `Zasoby/skill-scout/_proposed.json` (jeśli istnieje). Lista już zaproponowanych
+3. **Plik stanu** — `Zasoby/raporty/skill-scout/_proposed.json` (jeśli istnieje). Lista już zaproponowanych
    kandydatów. Polityka: **zaproponuj raz, nigdy więcej** — kandydat, którego slug już tam jest,
    NIE wraca do raportu, nawet jeśli dalej się powtarza.
 
@@ -103,8 +103,8 @@ Limit dotyczy tylko nowych; historia poniżej pokazuje się w całości.
 Zapisz JSON i odpal generator:
 
 ```bash
-# zapisz dane do Zasoby/skill-scout/data/YYYY-MM-DD.json (struktura niżej), potem:
-node .claude/skills/skill-scout/scripts/generate-raport.mjs Zasoby/skill-scout/data/$(date +%F).json
+# zapisz dane do Zasoby/raporty/skill-scout/data/YYYY-MM-DD.json (struktura niżej), potem:
+node .claude/skills/skill-scout/scripts/generate-raport.mjs Zasoby/raporty/skill-scout/data/$(date +%F).json
 ```
 
 Struktura JSON wejściowego dla generatora:
@@ -133,13 +133,13 @@ W `candidates` wstawiasz **tylko nowych** kandydatów z tego przebiegu (Krok 4).
 sekcję „Wcześniej wytypowane" z `_proposed.json` — dlatego raport generuj **przed** Krokiem 7
 (dopisaniem nowych do stanu), inaczej nowe zdublują się w historii.
 
-Raport ląduje w `Zasoby/skill-scout/Raporty/raport-aktualny.html` + `YYYY-MM-DD.html`.
+Raport ląduje w `Zasoby/raporty/skill-scout/Raporty/raport-aktualny.html` + `YYYY-MM-DD.html`.
 Układ: **🆕 Nowe w tym tygodniu** na górze, **📋 Wcześniej wytypowane** poniżej.
 
 ## Krok 7 — Zaktualizuj plik stanu
 
 Dopisz **nowych** kandydatów z tego przebiegu (sekcja „nowe" z Kroku 4) do
-`Zasoby/skill-scout/_proposed.json`. Zapisuj **pełne rekordy** (te same pola co w danych raportu)
+`Zasoby/raporty/skill-scout/_proposed.json`. Zapisuj **pełne rekordy** (te same pola co w danych raportu)
 + `first_proposed`, bo generator renderuje z nich karty historii:
 ```json
 { "proposed": [
@@ -155,7 +155,7 @@ Jeśli plik istnieje — **dołącz** do `proposed`, nie nadpisuj. Slug już obe
 Żeby raport nie zniknął w Zasobach, **zawsze** gdy w tym przebiegu pojawił się ≥1 nowy kandydat,
 wywołaj skill `utworz-zadanie`:
 > tytuł: `🔍 Przejrzyj N nowych kandydatów na skille (skill-scout)` · termin: dziś · priorytet: 🟢 normalny
-> Notatki (H4): ścieżka do raportu `Zasoby/skill-scout/Raporty/raport-aktualny.html`
+> Notatki (H4): ścieżka do raportu `Zasoby/raporty/skill-scout/Raporty/raport-aktualny.html`
 
 To jest siatka bezpieczeństwa — bez zadania w `to_do.md` łatwo zapomnieć o raporcie. Pomiń krok
 tylko gdy nowych kandydatów = 0 (nie ma czego przeglądać).

@@ -25,7 +25,7 @@ function vaultRoot() {
   }
   return process.cwd();
 }
-const STATE_DIR = join(vaultRoot(), 'Zasoby/skill-scout');
+const STATE_DIR = join(vaultRoot(), 'Zasoby/raporty/skill-scout');
 const RAPORTY = join(STATE_DIR, 'Raporty');
 const todayISO = () => new Date().toISOString().slice(0, 10);
 
@@ -233,7 +233,7 @@ function main() {
   const html = page(`Skill Scout · ${data.date || todayISO()}`, body);
   writeFileSync(join(RAPORTY, 'raport-aktualny.html'), html);
   writeFileSync(join(RAPORTY, `${data.date || todayISO()}.html`), html);
-  console.error(`→ raport zapisany: Zasoby/skill-scout/Raporty/raport-aktualny.html (${fresh.length} nowych, ${history.length} w historii)`);
+  console.error(`→ raport zapisany: Zasoby/raporty/skill-scout/Raporty/raport-aktualny.html (${fresh.length} nowych, ${history.length} w historii)`);
 }
 
 main();

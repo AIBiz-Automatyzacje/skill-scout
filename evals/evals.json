@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Odpal skill-scout na moich logach z ostatnich 7 dni — chcę zobaczyć co warto opakować w skill.",
-      "expected_output": "Raport HTML w Zasoby/skill-scout/Raporty/ z kandydatami ≥3× posortowanymi po priorytecie (freq × czas), plik stanu _proposed.json zaktualizowany, krótkie podsumowanie w czacie.",
+      "expected_output": "Raport HTML w Zasoby/raporty/skill-scout/Raporty/ z kandydatami ≥3× posortowanymi po priorytecie (freq × czas), plik stanu _proposed.json zaktualizowany, krótkie podsumowanie w czacie.",
       "files": []
     },
     {
