@@ -1,3 +1,8 @@
+> **⚠️ To repozytorium jest zarchiwizowane.** Skill Scout jest teraz częścią pluginu **Osobisty Asystent AI** i tam dostaje poprawki:
+> https://github.com/AIBiz-Automatyzacje/osobisty-asystent-plugin
+>
+> Jeśli masz go w `~/.claude/skills/skill-scout` (instalacja przez `git clone`), usuń ten folder i zainstaluj plugin — inaczej będziesz mieć dwa skille o tej samej nazwie.
+
 # Skill Scout 🔍
 
 Skaut Twojej własnej pracy dla Claude Code. Czyta logi sesji, wykrywa **powtarzalną ręczną robotę** (te same prośby ≥3× w oknie czasowym) i podaje gotową listę procesów, które warto opakować w skill — posortowaną po zwrocie z czasu.
